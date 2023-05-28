@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./styles/main.css">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <title>Movies</title>
+</head>
+
+<body>
+
+   <!-- header start -->
+
+   <header class="bg-green-600">
+      <div class="container px-5 mx-auto">
+         <nav class="flex justify-around items-center h-[70px]">
+            <a href="#" class="nav__logo text-white text-2xl font-bold">The Movies DB</a>
+
+            <input type="search" id="searchpanel" placeholder="Enter film name"
+               class="w-[300px]  p-3 h-[45px] ml-[200px] block rounded-xl px-5 focus:ring-2 focus:ring-green-300 focus:outline-none placeholder:text-green-600">
+
+            <button id="bookmark"
+               class="bg-white py-2 px-3 gap-x-3 rounded-lg flex justify-between items-center focus:ring-red-400 focus:ring-2"><span>BOOKMARK</span>
+               <span class="ml-3 bg-red-500 text-white block w-[20px] h-[20px] rounded-full" id="count"></span></button>
+
+         </nav>
+      </div>
+   </header>
+
+   <!-- header end -->
+
+   <!-- main start -->
+
+   <main>
+      <section class="main">
+         <div class="container mx-auto flex fixed top-[70px]">
+
+            <aside class="h-screen w-[27%] bg-green-800 shadow-lg p-5">
+
+               <label for="isname">
+                  <p class="ml-12 text-white mb-2">Enter film name</p>
+                  <input type="search" id="isname" placeholder="Enter film name"
+                     class="input w-[260px] border-spacing-2 border-green-500 p-3 h-[46px] block rounded-xl px-5 focus:ring-2 focus:ring-green-300 focus:outline-none placeholder:text-green-600 mx-auto mb-5">
+               </label>
+
+               <label for="reating">
+                  <p class="ml-12 text-white mb-2">Enter film rating</p>
+                  <input max="10" min="1" placeholder="Enter film rating" type="number" id="rating"
+                     class="w-[260px] reyting border-spacing-2 border-green-500 p-3 h-[45px] block rounded-xl mb-7 px-5 focus:ring-2 focus:ring-green-300 focus:outline-none placeholder:text-green-600 mx-auto ">
+               </label>
+
+               <select id="category"
+                  class="w-[260px] mb-7 border-spacing-2 border-green-500 pl-3 h-[45px] block rounded-xl focus:ring-2 focus:ring-green-300 focus:outline-none placeholder:text-green-600 mx-auto ">
+                  <option selected disabled>Select film category</option>
+               </select>
+
+               <select id="nomi"
+                  class="w-[260px] border-spacing-2 border-green-500 pl-3 h-[46px] block rounded-xl focus:ring-2 focus:ring-green-300 focus:outline-none placeholder:text-green-600 mx-auto ">
+                  <option selected disabled>Sorting</option>
+                  <option value="A-z">A-z</option>
+                  <option value="Z-a">Z-a</option>
+               </select>
+
+               <button id="search"
+                  class="bg-sky-600 px-5 ml-[122px] mt-7 text-white focus:ring-2 focus:ring-green-500 rounded-xl py-2 mx-auto mb-5">
+                  SEARCH
+               </button>
+            </aside>
+
+            <!-- dinamic content -->
+            <div class="main-content h-screen w-[73%] flex flex-wrap gap-4 p-5 overflow-scroll"></div>
+
+            <!-- bookmark -->
+            <div id="bookmarklist"
+               class="duration-300 shadow-xl absolute right-[-502px] h-screen w-[400px] bg-green-300"></div>
+
+         </div>
+      </section>
+   </main>
+
+   <script src="./script/utilis.js"></script>
+   <script src="./script/db.js"></script>
+   <script src="./script/index.js"></script>
+</body>
+
+</html>
